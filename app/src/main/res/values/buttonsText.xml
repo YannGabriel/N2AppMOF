@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="loginButtonText">Entrar</string>
+    <string name="googleButtonLogin" translatable="false">Google</string>
+    <string name="prefeituraButtonLogin">Prefeitura</string>
+</resources>

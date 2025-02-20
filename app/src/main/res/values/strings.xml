@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MOF</string>
-    <string name="loginTitle">LOGIN</string>
+    <string name="app_name" translatable="false">MOF</string>
+    <string name="loginTitle" translatable="false">LOGIN</string>
     <string name="hasAcount">Entrar como:</string>
 </resources>
