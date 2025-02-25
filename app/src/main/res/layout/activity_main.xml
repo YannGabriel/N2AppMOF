@@ -132,19 +132,13 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="24sp"
-        android:text="@string/googleButtonLogin" />
-
-    <Button
-        android:layout_marginTop="20dp"
-        android:id="@+id/prefeituraButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/buttonBg"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:text="@string/prefeituraButtonLogin"
+        android:text="@string/googleButtonLogin"
+        android:drawableLeft="@drawable/google_logo"
         />
+
+
+
+
 
     </LinearLayout>
 
