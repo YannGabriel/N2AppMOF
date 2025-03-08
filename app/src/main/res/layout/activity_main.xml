@@ -142,8 +142,9 @@
             android:textStyle="bold"
             android:textSize="24sp"
             android:text="@string/googleButtonLogin"
-            android:drawableLeft="@drawable/google_logo"
+            android:drawableLeft="@drawable/googleLogo"
             />
+
 
 
 
