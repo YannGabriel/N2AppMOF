@@ -5,7 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
->
+    android:background="@color/white"
+    android:layout_marginTop="25sp"
+    android:layout_marginBottom="25sp"
+    android:layout_marginRight="10sp"
+    android:layout_marginLeft="10sp"
+    >
     <!--Layout top (registro/entrar)-->
     <TextView
         android:layout_width="match_parent"
@@ -17,7 +22,7 @@
         android:layout_marginTop="40dp"
         android:id="@+id/sectionTitle"
         android:textColor="@color/black"
- />
+        />
 
     <LinearLayout
         android:id="@+id/sectionInputInfos"
@@ -31,35 +36,36 @@
 
 
 
-    <EditText
-        android:textColor="@color/black"
-        android:id="@+id/editTextTextUser"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:inputType="text"
-        android:hint="@string/textHint"
-        android:padding="10dp"
-        />
+        <EditText
+            android:textColor="@color/black"
+            android:id="@+id/userLoginText"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:inputType="text"
+            android:hint="@string/textHint"
+            android:padding="10dp"
+            />
 
-    <EditText
-        android:textColor="@color/black"
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:hint="@string/passwordHint"
-        android:padding="10dp"
-        />
+        <EditText
+            android:textColor="@color/black"
+            android:id="@+id/passwordLoginText"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="@string/passwordHint"
+            android:padding="10dp"
+            />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="@string/loginButtonText"
             android:textSize="30sp"
             android:backgroundTint="@color/blue"
+            android:textColor="@color/white"
             android:layout_marginTop="40dp"
 
             />
@@ -80,7 +86,8 @@
                 android:textAlignment="textStart"
                 android:layout_weight="1" />
 
-            <TextView
+            <Button
+                android:id="@+id/registerButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/registerUser"
@@ -89,7 +96,9 @@
                 android:layout_marginTop="10dp"
                 android:textSize="16sp"
                 android:textAlignment="textEnd"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                />
 
         </LinearLayout>
 
@@ -124,27 +133,21 @@
         android:layout_marginRight="60dp"
         android:layout_marginTop="30dp">
 
-    <Button
-        android:id="@+id/googleButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/buttonBg"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:text="@string/googleButtonLogin" />
+        <Button
+            android:id="@+id/googleButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/buttonBg"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:text="@string/googleButtonLogin"
+            android:drawableLeft="@drawable/google_logo"
+            />
 
-    <Button
-        android:layout_marginTop="20dp"
-        android:id="@+id/prefeituraButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/buttonBg"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:text="@string/prefeituraButtonLogin"
-        />
+
+
+
 
     </LinearLayout>
 
