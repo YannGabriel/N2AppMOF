@@ -5,48 +5,93 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_margin="20sp"
+    android:background="@color/white"
+    android:padding="10sp"
     >
 
-    <TextView
+
+    <EditText
+        android:id="@+id/createuserEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastre-se!"
+        android:hint="E-mail"
+        android:layout_marginTop="25sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:fontFamily="@font/poppins_light"
+        android:textSize="16sp"
         />
 
     <EditText
+        android:id="@+id/createUserUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Coloque seu e-mail:"
+        android:hint="Nome de usuário"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:fontFamily="@font/poppins_light"
+        android:textSize="16sp"
         />
 
     <EditText
+        android:id="@+id/createUserTel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Coloque seu nome:"
+        android:hint="Telefone"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:fontFamily="@font/poppins_light"
+        android:textSize="16sp"
         />
 
     <EditText
+        android:id="@+id/createUserPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Coloque seu telefone:"
+        android:hint="Senha do usuário"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:fontFamily="@font/poppins_light"
+        android:textSize="16sp"
         />
 
     <EditText
+        android:id="@+id/createUserValidPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Coloque sua senha:"
+        android:hint="Confirme sua senha"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:fontFamily="@font/poppins_light"
+        android:textSize="16sp"
         />
 
-    <EditText
-        android:layout_width="match_parent"
+    <CheckBox
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Confirme sua senha:"
+        android:layout_marginTop="20sp"
+        android:layout_marginLeft="20sp"
+        android:layout_marginRight="20sp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/poppins_light"
+        android:text="Confirmo que li e aceito os termos de uso do aplicativo"
+        android:textSize="12sp"
         />
-
     <Button
         android:id="@+id/createUserButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Criar"
+        android:layout_margin="20sp"
+        android:backgroundTint="@color/blue"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:fontFamily="@font/poppins_bold"
         />
 </LinearLayout>
