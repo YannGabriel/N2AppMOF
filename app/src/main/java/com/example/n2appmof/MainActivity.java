@@ -39,6 +39,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         loginButton = findViewById(R.id.loginButton);
         loginButton.setOnClickListener(this);
 
+        registerButton.setOnClickListener(v ->{
+            RegisterFragment resgisterFragment = new RegisterFragment();
+
+            resgisterFragment.show(getSupportFragmentManager(), resgisterFragment.getTag());
+        });
 
     }
 
@@ -59,4 +64,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this, validateText, Toast.LENGTH_SHORT).show();
         }
     }
+
 }
