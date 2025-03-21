@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/registerLayout"
     android:layout_width="match_parent"
@@ -18,8 +19,9 @@
         android:layout_marginTop="25sp"
         android:layout_marginLeft="20sp"
         android:layout_marginRight="20sp"
-        android:fontFamily="@font/poppins_light"
+        android:textStyle="bold"
         android:textColor="@color/black"
+        android:fontFamily="@font/poppins_light"
         android:textSize="16sp"
         />
 
@@ -76,16 +78,16 @@
         />
 
     <CheckBox
+        android:id="@+id/materialCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
-        android:layout_marginLeft="20sp"
-        android:layout_marginRight="20sp"
-        android:backgroundTint="@color/blue"
-        android:fontFamily="@font/poppins_light"
-        android:textColor="@color/black"
         android:text="Confirmo que li e aceito os termos de uso do aplicativo"
+        app:buttonTint="@color/blue"
+        app:checkMarkTint="@color/black"
+        android:layout_marginLeft="20sp"
+        android:textColor="@color/black"
         android:textSize="12sp"
+        android:fontFamily="@font/poppins_light"
         />
 
     <Button

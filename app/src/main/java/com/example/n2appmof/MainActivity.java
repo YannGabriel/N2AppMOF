@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 
 import androidx.activity.EdgeToEdge;
+import android.content.Context;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -50,18 +51,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        String invalidateText = "Os dados inseridos não estão corretos ou não existem!";
-
-        String validateText = "Acessando a conta!";
-
         String passwordTextValue = passwordText.getText().toString().trim();
         String userLoginTextValue = userLoginText.getText().toString().trim();
 
-        if (passwordTextValue.isEmpty() || userLoginTextValue.isEmpty()){
-            Toast.makeText(this, invalidateText, Toast.LENGTH_LONG).show();
+       if (userLoginTextValue.isEmpty() || passwordTextValue.isEmpty()){
+           Toast.makeText(this, "Por favor, preencha todos os campos", Toast.LENGTH_SHORT).show();
+           return;
+       }
+
+       LoginController loginController = new LoginController(this);
+       boolean isValid = loginController.checkUserData(userLoginTextValue, passwordTextValue);
+
+        if (isValid) {
+
+            Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show();
         }
         else {
-            Toast.makeText(this, validateText, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Nome de usuário ou senha incorretos", Toast.LENGTH_SHORT).show();
         }
     }
 
