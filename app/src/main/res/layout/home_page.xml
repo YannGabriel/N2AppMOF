@@ -80,6 +80,7 @@
                 android:backgroundTint="@color/blue"
                 android:text="Atividades"
                 android:fontFamily="@font/poppins_bold"
+                />
 
         </LinearLayout>
     </LinearLayout>
