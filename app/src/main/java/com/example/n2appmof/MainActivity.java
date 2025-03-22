@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 
 import androidx.activity.EdgeToEdge;
-import android.content.Context;
+import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -63,8 +63,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
        boolean isValid = loginController.checkUserData(userLoginTextValue, passwordTextValue);
 
         if (isValid) {
-
             Toast.makeText(this, "Login bem-sucedido!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, HomePage.class);
+            intent.putExtra("email_usuario", userLoginTextValue);
+            startActivity(intent);
+
         }
         else {
             Toast.makeText(this, "Nome de usuário ou senha incorretos", Toast.LENGTH_SHORT).show();
