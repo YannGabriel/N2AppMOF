@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,148 +7,229 @@
     android:id="@+id/homePageRoot"
     android:background="@color/white">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Seja bem vindo (a), "
-        android:fontFamily="@font/poppins_light"
-        android:textSize="20sp"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="35dp"
-        android:textColor="@color/black"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/userNameHome"
-        android:text="Carregando..."
-        android:layout_marginStart="45dp"
-        android:fontFamily="@font/poppins_bold"
-        android:textSize="25sp"
-        android:textColor="@color/black"
-        />
-
-    <LinearLayout
-        android:id="@+id/activitysContainerHome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/rounded_conors_all"
-        android:orientation="horizontal"
-        android:padding="10dp">
-
-        <ImageView
-            android:id="@+id/activitysImageicon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="10sp"
-            android:layout_marginEnd="10dp"
-            android:src="@drawable/activitys_logo_home" />
-
+        android:layout_height="match_parent"
+        >
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="10dp">
-
+            >
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_bold"
-                android:text="Atividades"
-                android:textColor="@color/black"
-                android:layout_marginStart="5dp"
-                android:textSize="22sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_light"
-                android:textColor="@color/black"
-                android:text="Veja suas últimas atividade e se organize melhor!"
-                android:textSize="16sp"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="3dp"
-                android:layout_marginBottom="3dp"
-                />
-
-            <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10sp"
-                android:backgroundTint="@color/blue"
-                android:fontFamily="@font/poppins_bold"
-                android:textColor="@color/white"
+                android:text="Seja bem vindo (a), "
+                android:fontFamily="@font/poppins_light"
                 android:textSize="20sp"
-                android:text="Atividades" />
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="35dp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/userNameHome"
+                android:text="Carregando..."
+                android:layout_marginStart="45dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="25sp"
+                android:textColor="@color/black"
+                />
+
+            <LinearLayout
+                android:id="@+id/activitysContainerHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="40dp"
+                android:background="@drawable/rounded_conors_all"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/activitysImageicon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/activitys_logo_home" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="Atividades"
+                        android:textColor="@color/black"
+                        android:layout_marginStart="5dp"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_light"
+                        android:textColor="@color/black"
+                        android:text="Veja suas últimas atividade e se organize melhor!"
+                        android:textSize="16sp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="3dp"
+                        />
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10sp"
+                        android:backgroundTint="@color/blue"
+                        android:fontFamily="@font/poppins_bold"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:text="Atividades" />
 
 
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/iaContainerHome"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_conors_all"
+                android:layout_marginTop="50sp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                >
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="75dp"
+                    android:id="@+id/iaImagecontent"
+                    android:src="@drawable/ia_image_home"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/RoundedImageView"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Inteligência Artificial"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="25sp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Utilize já a nossa inteligência artificial!Ela pode te ajudar a criar rotinas, tirar dúvidas sobre matérias e muito mais!"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textAlignment="center"
+                    />
+
+                <Button
+                    android:id="@+id/iaButtonTarget"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/blue"
+                    android:text="Acesse já!"
+                    android:fontFamily="@font/poppins_bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="10dp"
+                    />
+
+
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
+        android:id="@+id/footerNavHome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/iaContainerHome"
-        android:orientation="vertical"
-        android:background="@drawable/rounded_conors_all"
-        android:layout_marginTop="50sp"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:paddingTop="25dp"
-        android:paddingBottom="25dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        >
+        android:layout_height="80dp"
+        android:background="@drawable/rounded_footer"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:gravity="center_vertical">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:layout_width="wrap_content"
-            android:layout_height="75dp"
-            android:id="@+id/iaImagecontent"
-            android:src="@drawable/ia_image_home"
-            android:scaleType="centerCrop"
-            app:shapeAppearanceOverlay="@style/RoundedImageView"
-            />
+        <LinearLayout
+            android:id="@+id/ghostIconForRedut"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Inteligência Artificial"
-            android:fontFamily="@font/poppins_bold"
-            android:textSize="25sp"
-            android:textAlignment="center"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/black"
-            />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Utilize já a nossa inteligência artificial!Ela pode te ajudar a criar rotinas, tirar dúvidas sobre matérias e muito mais!"
-            android:fontFamily="@font/poppins_light"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textAlignment="center"
-            />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/activitysImageTargetHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/activity_null" />
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/iaButtonTarget"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/blue"
-            android:text="Acesse já!"
-            android:fontFamily="@font/poppins_bold"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginTop="10dp"
-            />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/addActivityImageTargetHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/add_null" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/userImageTargetHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/profile_null" />
+        </LinearLayout>
 
     </LinearLayout>
-</LinearLayout>
+
+    <ImageView
+        android:id="@+id/floatingIconHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/home_activated"
+        android:layout_marginStart="50dp"
+        android:layout_above="@id/footerNavHome"
+        android:translationY="30dp"
+        android:background="@drawable/rouded_footer_image"
+        android:padding="10dp"
+    />
+</RelativeLayout>
