@@ -1,31 +1,27 @@
-package com.example.n2appmof;
+package com.example.n2appmof
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.content.Context;
-public class LoginController {
-    private SQLiteDatabase dataBase;
-    private dataCriate data;
+import android.content.Context
+import android.database.sqlite.SQLiteDatabase
 
-    public LoginController(Context context){
-        data = new dataCriate(context);
-    }
+class LoginController(context: Context?) {
+    private var dataBase: SQLiteDatabase? = null
+    private val data = dataCriate(context)
 
-    public boolean checkUserData(String email, String password){
-        boolean isValid = false;
-        dataBase = data.getReadableDatabase();
+    fun checkUserData(email: String, password: String): Boolean {
+        var isValid = false
+        dataBase = data.readableDatabase
 
-        String sqlQuery = "SELECT * FROM usuarios WHERE email = ? AND password = ?";
+        val sqlQuery = "SELECT * FROM usuarios WHERE email = ? AND password = ?"
 
-        Cursor cursor = dataBase.rawQuery(sqlQuery, new String[]{email, password});
+        val cursor = dataBase?.rawQuery(sqlQuery, arrayOf(email, password))
 
-        if (cursor != null && cursor.moveToFirst()){
-            isValid = true;
+        if (cursor != null && cursor.moveToFirst()) {
+            isValid = true
         }
 
-        cursor.close();
-        dataBase.close();
+        cursor!!.close()
+        dataBase?.close()
 
-        return isValid;
+        return isValid
     }
 }

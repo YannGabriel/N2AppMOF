@@ -1,55 +1,79 @@
-package com.example.n2appmof;
-import com.example.n2appmof.R;
+package com.example.n2appmof
 
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 
-import android.database.sqlite.SQLiteDatabase;
-import android.os.Bundle;
-import android.widget.TextView;
+class HomePage : AppCompatActivity() {
+    var activitysButton: Button? = null
+    var iaButton: Button? = null
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import android.database.Cursor;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+    var activitysImageHome: ImageView? = null
+    var addActivitImageHome: ImageView? = null
+    var userImageHome: ImageView? = null
 
-public class HomePage extends AppCompatActivity {
+    var userNameHomePage: TextView? = null
 
-
-
-    TextView userNameHomePage;
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.home_page);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.homePageRoot), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        String userEmail = getIntent().getStringExtra("email_usuario");
-
-        SQLiteDatabase database = openOrCreateDatabase("mofdata.db", MODE_PRIVATE, null);
-
-        String userEmailConsult = userEmail;
-        String userName = "";
-
-        Cursor cursor = database.rawQuery("SELECT username FROM usuarios WHERE email = ?", new String[]{userEmailConsult});
-
-        if (cursor.moveToFirst()) {
-            userName = cursor.getString(0);
+    @SuppressLint("MissingInflatedId")
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        this.enableEdgeToEdge()
+        setContentView(R.layout.home_page)
+        ViewCompat.setOnApplyWindowInsetsListener(
+            findViewById(R.id.homePageRoot)
+        ) { v: View, insets: WindowInsetsCompat ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
         }
 
-        cursor.close();
-        database.close();
+        val userEmail = intent.getStringExtra("email_usuario")
+
+        val database = openOrCreateDatabase("mofdata.db", MODE_PRIVATE, null)
+
+        val userEmailConsult = userEmail
+        var userName = ""
+
+        val cursor = database.rawQuery(
+            "SELECT username FROM usuarios WHERE email = ?",
+            arrayOf(userEmailConsult)
+        )
+
+        if (cursor.moveToFirst()) {
+            userName = cursor.getString(0)
+        }
+
+        cursor.close()
+        database.close()
 
 
-        userNameHomePage = findViewById(R.id.userNameHome);
-        userNameHomePage.setText(userName);
+        userNameHomePage = findViewById(R.id.userNameHome)
+        userNameHomePage?.setText(userName)
 
+        //criação da conexão dos botões da Home
+        activitysButton = findViewById(R.id.activityHomeButton)
+        iaButton = findViewById(R.id.iaButtonTarget)
+
+        //botões headerHome
+        activitysImageHome = findViewById(R.id.activitysImageTargetHome)
+        addActivitImageHome = findViewById(R.id.addActivityImageTargetHome)
+        userImageHome = findViewById(R.id.userImageTargetHome)
+
+        activitysImageHome?.setOnClickListener(View.OnClickListener {
+            val activitysPage = Intent(
+                this@HomePage,
+                ActivitysPage::class.java
+            )
+            startActivity(activitysPage)
+        })
     }
-
 }
 

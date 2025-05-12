@@ -1,42 +1,34 @@
-package com.example.n2appmof;
+package com.example.n2appmof
 
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
+import android.content.ContentValues
+import android.content.Context
+import android.database.sqlite.SQLiteDatabase
+import android.util.Log
 
-public class RegisterController  {
-    private SQLiteDatabase  dataBase;
-    private dataCriate data;
+class RegisterController(context: Context?) {
+    private var dataBase: SQLiteDatabase? = null
+    private val data = dataCriate(context)
 
-    public RegisterController(Context context){
-        data = new dataCriate(context);
-    }
+    fun insertData(email: String?, username: String?, tel: String?, password: String?): String {
+        val result: Long
+        dataBase = data.writableDatabase
 
-    public String insertData (String email, String username, String tel, String password){
-        ContentValues values;
-        long result;
-        dataBase = data.getWritableDatabase();
+        val values = ContentValues()
+        values.put("email", email)
+        values.put("tel", tel)
+        values.put("password", password)
+        values.put("username", username)
 
-        values = new ContentValues();
-        values.put("email", email);
-        values.put("tel", tel);
-        values.put("password", password);
-        values.put("username", username);
+        result = dataBase!!.insert("usuarios", null, values)
 
-        result = dataBase.insert("usuarios", null, values);
+        dataBase?.close()
 
-        dataBase.close();
-
-        if (result == -1){
-            Log.e("RegisterController", "Erro ao criar usuário");
-            return "Erro ao criar usuário!";
+        if (result == -1L) {
+            Log.e("RegisterController", "Erro ao criar usuário")
+            return "Erro ao criar usuário!"
+        } else {
+            Log.i("RegisterController", "Usuário criado com sucesso. ID: $result")
+            return "Usuário foi cadastrado com sucesso!"
         }
-        else{
-            Log.i("RegisterController", "Usuário criado com sucesso. ID: " + result);
-            return "Usuário foi cadastrado com sucesso!";
-        }
-
     }
 }
